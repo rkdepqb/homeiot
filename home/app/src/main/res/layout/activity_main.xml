@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/btn_navi"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:srcCompat="@drawable/ic_baseline_menu_24"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:layout_marginStart="160dp"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:text="HOME"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@id/btn_navi"
+            app:layout_constraintTop_toTopOf="@id/btn_navi"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="250dp">
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_marginTop="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="350dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/home"
+                    android:scaleType="fitXY"
+                    app:shapeAppearanceOverlay="@style/RoundSquare">
+
+                </com.google.android.material.imageview.ShapeableImageView>
+
+                <ImageView
+
+                    android:layout_marginTop="115dp"
+                    android:layout_marginStart="70dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_baseline_home_24"/>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="120dp"
+                    android:layout_width="250dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:text="My Devices"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"/>
+
+
+            </FrameLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/naviView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/navi_menu"/>
+
+    <include layout ="@layout/recycleview_main"
+        android:id="@+id/recylerView"/>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
